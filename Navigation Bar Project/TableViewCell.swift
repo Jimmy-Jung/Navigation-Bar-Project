@@ -32,6 +32,10 @@ class TableViewCell: UITableViewCell {
         
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 4, left: 50, bottom: 4, right: 12))
         
+        textView.textContainerInset = .zero
+        textView.isScrollEnabled = false
+        textView.isEditable = false
+        
         
     }
 }

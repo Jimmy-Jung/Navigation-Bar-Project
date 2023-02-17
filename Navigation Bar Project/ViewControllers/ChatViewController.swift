@@ -38,6 +38,8 @@ class ChatViewController: UIViewController {
     func setup() {
         tableView.dataSource = self
         chatTextField.delegate = self
+        tableView.delegate = self
+        tableView.estimatedRowHeight = 44
         
     }
     
@@ -127,6 +129,21 @@ extension ChatViewController: UITableViewDataSource {
         cell.textView.text = chatBoxArray[indexPath.row].chatBoxText
         
         return cell
+    }
+}
+
+extension ChatViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell1") as! TableViewCell
+                cell.textView.text = chatBoxArray[indexPath.row].chatBoxText // or any other data source you have
+                
+                let size = CGSize(width: cell.textView.frame.width, height: CGFloat.greatestFiniteMagnitude)
+                let textHeight = cell.textView.sizeThatFits(size).height
+                
+                // Add any additional spacing needed for the cell
+                let cellHeight = textHeight + 8 // 16 is the padding you want
+                
+                return cellHeight
     }
 }
 

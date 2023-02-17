@@ -56,17 +56,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Guu-Jj-Z0i">
-                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="60"/>
+                                                    <rect key="frame" x="50" y="0.0" width="343" height="60"/>
                                                     <color key="backgroundColor" red="0.97647058959999999" green="0.89803922179999995" blue="0.3058823645" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="180" id="cLL-E7-tZS"/>
+                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="203" id="cLL-E7-tZS"/>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="g7M-37-WNz"/>
                                                     </constraints>
                                                 </view>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S27-Pa-kdT">
-                                                    <rect key="frame" x="14" y="8" width="365" height="44"/>
+                                                    <rect key="frame" x="64" y="8" width="315" height="44"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="180" id="cql-19-MU6"/>
+                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="203" id="cql-19-MU6"/>
                                                     </constraints>
                                                     <color key="textColor" systemColor="labelColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -74,6 +74,7 @@
                                                 </textView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="Guu-Jj-Z0i" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Cpy-h7-5eA" secondAttribute="leading" constant="50" id="3fu-9D-PtR"/>
                                                 <constraint firstItem="Guu-Jj-Z0i" firstAttribute="bottom" secondItem="S27-Pa-kdT" secondAttribute="bottom" constant="8" id="7GX-DH-CH6"/>
                                                 <constraint firstItem="S27-Pa-kdT" firstAttribute="top" secondItem="Guu-Jj-Z0i" secondAttribute="top" constant="8" id="7yE-DB-Ezw"/>
                                                 <constraint firstItem="Guu-Jj-Z0i" firstAttribute="trailing" secondItem="S27-Pa-kdT" secondAttribute="trailing" constant="14" id="V0K-5l-MIF"/>
