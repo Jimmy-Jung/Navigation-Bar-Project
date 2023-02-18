@@ -8,9 +8,19 @@
 import UIKit
 
 class TableViewCell: UITableViewCell {
+    
+    var chatBox: ChatBox? {
+        didSet{
+            guard let chatBox = chatBox else {return}
+            self.textView.text = chatBox.chatBoxText
+            self.MessageTimeLabel.text = chatBox.textedTime
+            
+        }
+    }
 
     @IBOutlet weak var uiView: UIView!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var MessageTimeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

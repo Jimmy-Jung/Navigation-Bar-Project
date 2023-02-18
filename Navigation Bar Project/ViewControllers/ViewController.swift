@@ -8,6 +8,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let chatDateManager = DataManager.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,5 +19,9 @@ class ViewController: UIViewController {
     @IBAction func tappedChatBtn(_ sender: UIButton) {
     }
     
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        guard let vc = segue.destination as? ChatViewController else {return}
+//        vc.chatDataManager = self.chatDateManager
+//    }
 }
 

@@ -8,24 +8,27 @@
 import UIKit
 
 class DataManager {
-    private var chatBoxArray: [ChatBox] = []
+    static let shared = DataManager()
     
-    func chatBoxData() {
-        chatBoxArray = [
-            ChatBox(chatBoxText: "첫 텍스트")
-        ]
-    }
+    private var chatBoxArray: [ChatBox] = [ChatBox(chatBoxText: "첫 텍스트", textedTime: "시작 00:00")]
     
     func getChetData() -> [ChatBox] {
         return chatBoxArray
     }
     
-    func updateData(text: String?) {
-        let chatBox = ChatBox(chatBoxText: text)
+    func updateData(text: String?, time: String?) {
+        let chatBox = ChatBox(chatBoxText: text, textedTime: time)
         chatBoxArray.append(chatBox)
     }
     
     func getLastData() -> ChatBox {
         return chatBoxArray[chatBoxArray.endIndex - 1]
+    }
+    private init() {
+        print("메모리 할당")
+    }
+    
+    deinit {
+        print("메모리 해제")
     }
 }

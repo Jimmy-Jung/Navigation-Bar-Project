@@ -9,5 +9,5 @@ import Foundation
 
 struct ChatBox {
     let chatBoxText: String?
-    //let textedTime: String?
+    let textedTime: String?
 }

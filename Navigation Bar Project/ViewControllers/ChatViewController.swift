@@ -7,46 +7,86 @@
 
 import UIKit
 
-class ChatViewController: UIViewController {
+final class ChatViewController: UIViewController {
     
-    @IBOutlet weak var chatTextField: UITextField!
-    @IBOutlet weak var textFieldViewHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var BGView: UIView!
+    @IBOutlet weak var chatTextView: UITextView!
     @IBOutlet weak var tableView: UITableView!
-    
-    
-    //키보드 높이 조절을 위한 컨스턴트
-    lazy var textFeildViewHeightConstant = textFieldViewHeight.constant
+    @IBOutlet weak var messageTextViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var BGBGViewButtom: NSLayoutConstraint!
+    @IBOutlet weak var sendBtn: UIButton!
     
     var chatBoxArray: [ChatBox] = []
-    var chatDataManager = DataManager()
+    var chatDataManager = DataManager.shared
+    let dateFormatter = DateFormatter()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
      
-        setup()
+        tableViewSetup()
+        textViewSetup()
         setupData()
         keyboartSetup()
-        
-        
+        makeDateFormatter()
+        hideKeyboard()
     }
     
+    @IBAction func sendBtnTapped(_ sender: UIButton) {
+        if chatTextView.text != "" {
+            //메세지 보내는 시간
+            let currentTime = self.dateFormatter.string(from: Date())
+            let formattedTime = currentTime
+            
+            //데이터매니저에 텍스트 추가
+            chatDataManager.updateData(text: chatTextView.text, time: formattedTime)
+            let newMesaege = chatDataManager.getLastData()
+            chatBoxArray.append(newMesaege)
+            chatTextView.text = ""
+            tableView.reloadData()
+        }
+    }
+    
+    func makeDateFormatter() {
+        dateFormatter.locale = Locale(identifier: "Ko_KR")
+        dateFormatter.dateFormat = "a h:mm"
+    }
     func keyboartSetup() {
         self.tabBarController?.tabBar.isHidden = true
         keyboardSetObserver()
     }
     
-    func setup() {
+    func textViewSetup() {
+        chatTextView.delegate = self
+        BGView.layer.cornerRadius = 17
+        sendBtn.layer.cornerRadius = 14
+
+    }
+    
+    func tableViewSetup() {
         tableView.dataSource = self
-        chatTextField.delegate = self
         tableView.delegate = self
         tableView.estimatedRowHeight = 44
+        sendBtn.isHidden = true
         
     }
     
     func setupData() {
-        chatDataManager.chatBoxData()
         chatBoxArray = chatDataManager.getChetData()
     }
+    
+    func hideKeyboard()
+        {
+            let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+                target: self,
+                action: #selector(ChatViewController.dismissKeyboard))
+            view.addGestureRecognizer(tap)
+        }
+    @objc func dismissKeyboard()
+        {
+            view.endEditing(true)
+        }
     
     
     func keyboardSetObserver() {
@@ -68,11 +108,11 @@ class ChatViewController: UIViewController {
         let notiInfo = noti.userInfo!
         if let keyboardFrame = (notiInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             //animation
-            let height = keyboardFrame.height - self.view.safeAreaInsets.bottom
+            let height = keyboardFrame.height - self.view.safeAreaInsets.bottom - 8
             let animationDuration = notiInfo[ UIResponder.keyboardAnimationDurationUserInfoKey] as! TimeInterval
             //키보드 올라오는 애니메이션이랑 동일하게 텍스트뷰 올라가게 만들기.
             UIView.animate(withDuration: animationDuration) {
-                self.textFieldViewHeight.constant = self.textFeildViewHeightConstant + height
+                self.BGBGViewButtom.constant = height
                 self.view.layoutIfNeeded()
             }
         }
@@ -85,36 +125,25 @@ class ChatViewController: UIViewController {
             let animationDuration = notiInfo[ UIResponder.keyboardAnimationDurationUserInfoKey] as! TimeInterval
             //키보드 올라오는 애니메이션이랑 동일하게 텍스트뷰 올라가게 만들기.
             UIView.animate(withDuration: animationDuration) {
-                self.textFieldViewHeight.constant = self.textFeildViewHeightConstant
+                self.BGBGViewButtom.constant = 0
                 self.view.layoutIfNeeded()
             }
         }
     }
         
     //다른 화면 터치했을 때 키보드 내려가기
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        view.endEditing(true)
-    }
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        view.endEditing(true)
+//    }
     deinit {
         // 노티피케이션의 등록 해제 (해제안하면 계속 등록될 수 있음) ⭐️
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        
     }
     
 }
 
-extension ChatViewController: UITextFieldDelegate {
-    // 텍스트필드의 엔터키가 눌러졌을때 호출 (동작할지 말지 물어보는 것)
-        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            //데이터매니저에 텍스트 추가
-            chatDataManager.updateData(text: textField.text)
-            let newText = chatDataManager.getLastData()
-            chatBoxArray.append(newText)
-            textField.text = ""
-            tableView.reloadData()
-            return true
-        }
-}
 
 extension ChatViewController: UITableViewDataSource {
     
@@ -126,7 +155,7 @@ extension ChatViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell1", for: indexPath) as! TableViewCell
         
-        cell.textView.text = chatBoxArray[indexPath.row].chatBoxText
+        cell.chatBox = chatBoxArray[indexPath.row]
         
         return cell
     }
@@ -145,5 +174,17 @@ extension ChatViewController: UITableViewDelegate {
                 
                 return cellHeight
     }
+    
 }
 
+extension ChatViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+            let size = CGSize(width: textView.frame.width, height: CGFloat.greatestFiniteMagnitude)
+            let expectedSize = textView.sizeThatFits(size)
+            messageTextViewHeightConstraint.constant = expectedSize.height
+        
+            sendBtn.isHidden = chatTextView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        }
+    
+    
+}
