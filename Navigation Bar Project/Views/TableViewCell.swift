@@ -26,6 +26,7 @@ class TableViewCell: UITableViewCell {
         super.awakeFromNib()
         uiView.layer.cornerRadius = 12
         uiView.layer.masksToBounds = true
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

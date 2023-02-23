@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5515455929A7321D001FB8D3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5515455829A7321D001FB8D3 /* LoginViewController.swift */; };
 		5515455B29A73904001FB8D3 /* UITabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5515455A29A73904001FB8D3 /* UITabBarViewController.swift */; };
+		5515455D29A7565C001FB8D3 /* CustomValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5515455C29A7565C001FB8D3 /* CustomValue.swift */; };
 		55674BA7299C9333002AC5F6 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55674BA6299C9333002AC5F6 /* ChatViewController.swift */; };
 		55674BAB299E920E002AC5F6 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55674BAA299E920E002AC5F6 /* TableViewCell.swift */; };
 		55674BAD299E94B8002AC5F6 /* ChatBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55674BAC299E94B8002AC5F6 /* ChatBox.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		5515455829A7321D001FB8D3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5515455A29A73904001FB8D3 /* UITabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarViewController.swift; sourceTree = "<group>"; };
+		5515455C29A7565C001FB8D3 /* CustomValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomValue.swift; sourceTree = "<group>"; };
 		55674BA6299C9333002AC5F6 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		55674BAA299E920E002AC5F6 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		55674BAC299E94B8002AC5F6 /* ChatBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBox.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 		55674BB1299F1D58002AC5F6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				55674BAA299E920E002AC5F6 /* TableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -96,10 +99,10 @@
 			isa = PBXGroup;
 			children = (
 				55D66872299B7F4D00EE103A /* AppDelegate.swift */,
+				5515455C29A7565C001FB8D3 /* CustomValue.swift */,
 				55D66874299B7F4D00EE103A /* SceneDelegate.swift */,
 				55674BB0299F1D39002AC5F6 /* Models */,
 				55674BB1299F1D58002AC5F6 /* Views */,
-				55674BAA299E920E002AC5F6 /* TableViewCell.swift */,
 				55674BB2299F1D60002AC5F6 /* ViewControllers */,
 				55D66878299B7F4D00EE103A /* Main.storyboard */,
 				55D6687B299B7F4F00EE103A /* Assets.xcassets */,
@@ -184,6 +187,7 @@
 				55D66877299B7F4D00EE103A /* ViewController.swift in Sources */,
 				55D66873299B7F4D00EE103A /* AppDelegate.swift in Sources */,
 				55674BAF299E953A002AC5F6 /* DataManager.swift in Sources */,
+				5515455D29A7565C001FB8D3 /* CustomValue.swift in Sources */,
 				5515455929A7321D001FB8D3 /* LoginViewController.swift in Sources */,
 				55674BA7299C9333002AC5F6 /* ChatViewController.swift in Sources */,
 				55D66875299B7F4D00EE103A /* SceneDelegate.swift in Sources */,

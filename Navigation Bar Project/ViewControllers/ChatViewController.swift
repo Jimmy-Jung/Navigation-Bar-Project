@@ -59,6 +59,7 @@ final class ChatViewController: UIViewController {
     
     func textViewSetup() {
         chatTextView.delegate = self
+        chatTextView.showsVerticalScrollIndicator = false
         BGView.layer.cornerRadius = 17
         sendBtn.layer.cornerRadius = 14
 
