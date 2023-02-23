@@ -213,7 +213,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="ii4-tk-QYx">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="k7Y-un-wj5" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainViewController" automaticallyAdjustsScrollViewInsets="NO" id="k7Y-un-wj5" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5zc-0O-9rA">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -237,7 +237,7 @@
         <!--Yello-->
         <scene sceneID="lgC-m3-Osx">
             <objects>
-                <viewController id="JtQ-a1-yCq" sceneMemberID="viewController">
+                <viewController id="JtQ-a1-yCq" customClass="UITabBarViewController" customModule="Navigation_Bar_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="trH-8p-Sb2">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
