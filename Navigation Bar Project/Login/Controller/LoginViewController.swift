@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 final class LoginViewController: UIViewController{
     
@@ -23,6 +24,7 @@ final class LoginViewController: UIViewController{
         
         setupDelegate()
         setupAddTarget()
+        autoLogin()
     }
 
     // 셋팅
@@ -36,9 +38,16 @@ final class LoginViewController: UIViewController{
         loginView.passwordTextField.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
         loginView.passwordSecureButton.addTarget(self, action: #selector(passwordSecureModeSetting), for: .touchUpInside)
         loginView.loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        loginView.joinButton.addTarget(self, action: #selector(joinButtonTapped), for: .touchUpInside)
         loginView.passwordResetButton.addTarget(self, action: #selector(resetButtonTapped  ), for: .touchUpInside)
     }
     
+    private func autoLogin() {
+        loginView.emailTextField.text = "jimmy@naver.com"
+        loginView.passwordTextField.text = "z123456"
+        loginView.loginButton.isEnabled = true
+        loginView.joinButton.isEnabled = true
+    }
     
     // MARK: - 비밀번호 가리기 모드 켜고 끄기
     @objc private func passwordSecureModeSetting() {
@@ -66,8 +75,63 @@ final class LoginViewController: UIViewController{
             loginView.passwordInfoLabel.shake()
             return
         }
-        self.loginCheck = true
-        dismiss(animated: true)
+        
+        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+            if let e = error {
+                dump(e)
+                let alert = UIAlertController(title: "계정 오류!!", message: "조회되지 않는 이메일 혹은 잘못입력", preferredStyle: .alert)
+                let success = UIAlertAction(title: "확인", style: .default) { action in
+                    print("확인버튼이 눌렸습니다.")
+                }
+                alert.addAction(success)
+                DispatchQueue.main.async {
+                    // 실제 띄우기
+                    self.present(alert, animated: true, completion: nil)
+                }
+                return
+                
+            } else {
+                self.loginCheck = true
+                DispatchQueue.main.async{
+                    self.dismiss(animated: true)
+                }
+                return
+            }
+        }
+    }
+    
+    @objc func joinButtonTapped() {
+        // 서버랑 통신해서, 다음 화면으로 넘어가는 내용 구현
+        print("다음 화면으로 넘어가기")
+        
+        guard
+            let email = loginView.emailTextField.text, !email.isEmpty, isValidEmail(testStr: email)
+        else {
+            loginView.emailInfoLabel.textColor = .systemRed
+            loginView.emailInfoLabel.shake()
+            return
+        }
+        guard
+            let password = loginView.passwordTextField.text, !password.isEmpty,
+                isValidPassword(password: password)
+        else {
+            loginView.passwordInfoLabel.textColor = .systemRed
+            loginView.passwordInfoLabel.shake()
+            return
+        }
+        
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            if let e = error {
+                print(e)
+            } else {
+                self.loginCheck = true
+                DispatchQueue.main.async{
+                    self.dismiss(animated: true)
+                }
+                return
+            }
+        }
+        
     }
     
     // 리셋버튼이 눌리면 동작하는 함수

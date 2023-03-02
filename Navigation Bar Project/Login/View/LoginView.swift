@@ -112,16 +112,29 @@ class LoginView: UIView {
         button.isEnabled = false
         return button
     }()
-    
+    //회원가입 버튼
+    lazy var joinButton: UIButton = {
+        let button = UIButton(type: .custom)
+        button.backgroundColor = .kakaoLightBrown
+        button.layer.cornerRadius = 5
+        button.setTitle("회원가입", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.setTitleColor(.kakaoTextBrown, for: .disabled)
+        button.setTitleColor(.white, for: .normal)
+        button.isEnabled = false
+        return button
+    }()
     // 이메일텍스트필드, 패스워드, 로그인버튼 스택뷰에 배치
     lazy var stackView: UIStackView = {
-        let stview = UIStackView(arrangedSubviews: [emailTextFieldView, passwordTextFieldView, loginButton])
+        let stview = UIStackView(arrangedSubviews: [emailTextFieldView, passwordTextFieldView, loginButton, joinButton])
         stview.spacing = 18
         stview.axis = .vertical
         stview.distribution = .fillEqually
         stview.alignment = .fill
         return stview
     }()
+    
+    
     
     // 비밀번호 재설정 버튼
     lazy var passwordResetButton: UIButton = {
@@ -133,7 +146,8 @@ class LoginView: UIView {
         return button
     }()
 
-    
+    // MARK: - 이니셜라이저
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -194,7 +208,7 @@ class LoginView: UIView {
             stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
-            stackView.heightAnchor.constraint(equalToConstant: textViewHeight*3 + 36),
+            stackView.heightAnchor.constraint(equalToConstant: textViewHeight*4 + 36),
             
             logoImageView.bottomAnchor.constraint(equalTo: stackView.topAnchor, constant: -20),
             logoImageView.widthAnchor.constraint(equalToConstant: textViewHeight*4),

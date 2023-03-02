@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseCore
 import FirebaseFirestore
 import FirebaseAuth
@@ -14,12 +15,12 @@ import FirebaseAuth
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         let db = Firestore.firestore()
-        
+        print("파이어베이스")
+        print(db)
         return true
     }
 
