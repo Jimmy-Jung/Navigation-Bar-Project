@@ -1,0 +1,27 @@
+
+/* Class = "UILabel"; text = "오전 11:00"; ObjectID = "0mW-6Q-mUN"; */
+"0mW-6Q-mUN.text" = "오전 11:00";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "GgO-pA-S4v"; */
+"GgO-pA-S4v.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Button"; ObjectID = "RtI-kD-KqG"; */
+"RtI-kD-KqG.configuration.title" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "RtI-kD-KqG"; */
+"RtI-kD-KqG.normalTitle" = "Button";
+
+/* Class = "UITabBarItem"; title = "main"; ObjectID = "SkX-fe-JER"; */
+"SkX-fe-JER.title" = "main";
+
+/* Class = "UITabBarItem"; title = "Yello"; ObjectID = "c32-ck-PJW"; */
+"c32-ck-PJW.title" = "Yello";
+
+/* Class = "UINavigationItem"; title = "메인화면"; ObjectID = "hB2-OS-6iJ"; */
+"hB2-OS-6iJ.title" = "메인화면";
+
+/* Class = "UITabBarItem"; title = "purple"; ObjectID = "kiI-3l-4nA"; */
+"kiI-3l-4nA.title" = "purple";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "sJK-t0-y5P"; */
+"sJK-t0-y5P.normalTitle" = "Button";

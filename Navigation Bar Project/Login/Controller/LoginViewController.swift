@@ -76,20 +76,28 @@ final class LoginViewController: UIViewController{
             return
         }
         
-        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-            if let e = error {
-                dump(e)
-                let alert = UIAlertController(title: "계정 오류!!", message: "조회되지 않는 이메일 혹은 잘못입력", preferredStyle: .alert)
-                let success = UIAlertAction(title: "확인", style: .default) { action in
-                    print("확인버튼이 눌렸습니다.")
-                }
-                alert.addAction(success)
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+            guard let self = self else {return}
+            if let error = error as NSError? {
+                    // 로그인 실패
+                    print(error.localizedDescription)
+                    var message = ""
+                switch error.code {
+                case AuthErrorCode.networkError.rawValue:
+                    message = "인터넷 연결을 확인해주세요."
+                case AuthErrorCode.userNotFound.rawValue:
+                    message = "등록되지 않은 이메일 입니다."
+                case AuthErrorCode.wrongPassword.rawValue:
+                    message = "비밀번호가 올바르지 않습니다."
+                default:
+                    message = "로그인에 실패했습니다."
+                    }
+                    let alertController = UIAlertController(title: "로그인 실패", message: message, preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+                    alertController.addAction(okAction)
                 DispatchQueue.main.async {
-                    // 실제 띄우기
-                    self.present(alert, animated: true, completion: nil)
+                    self.present(alertController, animated: true, completion: nil)
                 }
-                return
-                
             } else {
                 self.loginCheck = true
                 DispatchQueue.main.async{
