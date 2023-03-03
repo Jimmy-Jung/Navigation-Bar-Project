@@ -8,21 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		5515455929A7321D001FB8D3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5515455829A7321D001FB8D3 /* LoginViewController.swift */; };
-		5515455B29A73904001FB8D3 /* UITabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5515455A29A73904001FB8D3 /* UITabBarViewController.swift */; };
+		5515455B29A73904001FB8D3 /* FirstTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5515455A29A73904001FB8D3 /* FirstTabBarViewController.swift */; };
 		5515455D29A7565C001FB8D3 /* CustomValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5515455C29A7565C001FB8D3 /* CustomValue.swift */; };
 		5522A81B29AF92E200E6451B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5522A81A29AF92E200E6451B /* GoogleService-Info.plist */; };
 		5522A81E29AF952600E6451B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5522A81D29AF952600E6451B /* FirebaseAnalytics */; };
 		5522A82129B06B0200E6451B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5522A82029B06B0200E6451B /* FirebaseFirestore */; };
 		5522A82329B06B3500E6451B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5522A82229B06B3500E6451B /* FirebaseAuth */; };
 		5522A82929B06DB700E6451B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5522A82829B06DB700E6451B /* LoginView.swift */; };
-		5522A82B29B0BD5100E6451B /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5522A82A29B0BD5100E6451B /* LoginManager.swift */; };
 		55674BA7299C9333002AC5F6 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55674BA6299C9333002AC5F6 /* ChatViewController.swift */; };
 		55674BAB299E920E002AC5F6 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55674BAA299E920E002AC5F6 /* TableViewCell.swift */; };
 		55674BAD299E94B8002AC5F6 /* ChatBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55674BAC299E94B8002AC5F6 /* ChatBox.swift */; };
 		55674BAF299E953A002AC5F6 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55674BAE299E953A002AC5F6 /* DataManager.swift */; };
 		55D66873299B7F4D00EE103A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D66872299B7F4D00EE103A /* AppDelegate.swift */; };
 		55D66875299B7F4D00EE103A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D66874299B7F4D00EE103A /* SceneDelegate.swift */; };
-		55D66877299B7F4D00EE103A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D66876299B7F4D00EE103A /* ViewController.swift */; };
+		55D66877299B7F4D00EE103A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D66876299B7F4D00EE103A /* MainViewController.swift */; };
 		55D6687A299B7F4D00EE103A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55D66878299B7F4D00EE103A /* Main.storyboard */; };
 		55D6687C299B7F4F00EE103A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55D6687B299B7F4F00EE103A /* Assets.xcassets */; };
 		55D6687F299B7F4F00EE103A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55D6687D299B7F4F00EE103A /* LaunchScreen.storyboard */; };
@@ -30,19 +29,18 @@
 
 /* Begin PBXFileReference section */
 		5515455829A7321D001FB8D3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		5515455A29A73904001FB8D3 /* UITabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarViewController.swift; sourceTree = "<group>"; };
+		5515455A29A73904001FB8D3 /* FirstTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTabBarViewController.swift; sourceTree = "<group>"; };
 		5515455C29A7565C001FB8D3 /* CustomValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomValue.swift; sourceTree = "<group>"; };
 		5522A81A29AF92E200E6451B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5522A82829B06DB700E6451B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		5522A82A29B0BD5100E6451B /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		55674BA6299C9333002AC5F6 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		55674BAA299E920E002AC5F6 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		55674BAC299E94B8002AC5F6 /* ChatBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBox.swift; sourceTree = "<group>"; };
 		55674BAE299E953A002AC5F6 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		55D6686F299B7F4D00EE103A /* Navigation Bar Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Navigation Bar Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		55D6686F299B7F4D00EE103A /* KaKao Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KaKao Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55D66872299B7F4D00EE103A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55D66874299B7F4D00EE103A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		55D66876299B7F4D00EE103A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		55D66876299B7F4D00EE103A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		55D66879299B7F4D00EE103A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		55D6687B299B7F4F00EE103A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55D6687E299B7F4F00EE103A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -70,40 +68,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5522A82429B06D4D00E6451B /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				5522A82529B06D6600E6451B /* Model */,
-				5522A82629B06D6D00E6451B /* View */,
-				5522A82729B06D8300E6451B /* Controller */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		5522A82529B06D6600E6451B /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				5522A82A29B0BD5100E6451B /* LoginManager.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		5522A82629B06D6D00E6451B /* View */ = {
-			isa = PBXGroup;
-			children = (
-				5522A82829B06DB700E6451B /* LoginView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		5522A82729B06D8300E6451B /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				5515455829A7321D001FB8D3 /* LoginViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		5522A82C29B0BD7100E6451B /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +90,7 @@
 		55674BB1299F1D58002AC5F6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5522A82829B06DB700E6451B /* LoginView.swift */,
 				55674BAA299E920E002AC5F6 /* TableViewCell.swift */,
 				55D66878299B7F4D00EE103A /* Main.storyboard */,
 			);
@@ -135,9 +100,10 @@
 		55674BB2299F1D60002AC5F6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				55D66876299B7F4D00EE103A /* ViewController.swift */,
+				55D66876299B7F4D00EE103A /* MainViewController.swift */,
 				55674BA6299C9333002AC5F6 /* ChatViewController.swift */,
-				5515455A29A73904001FB8D3 /* UITabBarViewController.swift */,
+				5515455A29A73904001FB8D3 /* FirstTabBarViewController.swift */,
+				5515455829A7321D001FB8D3 /* LoginViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -145,7 +111,7 @@
 		55D66866299B7F4D00EE103A = {
 			isa = PBXGroup;
 			children = (
-				55D66871299B7F4D00EE103A /* Navigation Bar Project */,
+				55D66871299B7F4D00EE103A /* KaKao Clone */,
 				55D66870299B7F4D00EE103A /* Products */,
 				5522A81F29B06B0200E6451B /* Frameworks */,
 			);
@@ -154,33 +120,32 @@
 		55D66870299B7F4D00EE103A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				55D6686F299B7F4D00EE103A /* Navigation Bar Project.app */,
+				55D6686F299B7F4D00EE103A /* KaKao Clone.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		55D66871299B7F4D00EE103A /* Navigation Bar Project */ = {
+		55D66871299B7F4D00EE103A /* KaKao Clone */ = {
 			isa = PBXGroup;
 			children = (
 				55D66872299B7F4D00EE103A /* AppDelegate.swift */,
 				5515455C29A7565C001FB8D3 /* CustomValue.swift */,
 				55D66874299B7F4D00EE103A /* SceneDelegate.swift */,
 				5522A82C29B0BD7100E6451B /* Main */,
-				5522A82429B06D4D00E6451B /* Login */,
 				55D6687B299B7F4F00EE103A /* Assets.xcassets */,
 				55D6687D299B7F4F00EE103A /* LaunchScreen.storyboard */,
 				55D66880299B7F4F00EE103A /* Info.plist */,
 				5522A81A29AF92E200E6451B /* GoogleService-Info.plist */,
 			);
-			path = "Navigation Bar Project";
+			path = "KaKao Clone";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		55D6686E299B7F4D00EE103A /* Navigation Bar Project */ = {
+		55D6686E299B7F4D00EE103A /* KaKao Clone */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 55D66883299B7F4F00EE103A /* Build configuration list for PBXNativeTarget "Navigation Bar Project" */;
+			buildConfigurationList = 55D66883299B7F4F00EE103A /* Build configuration list for PBXNativeTarget "KaKao Clone" */;
 			buildPhases = (
 				55D6686B299B7F4D00EE103A /* Sources */,
 				55D6686C299B7F4D00EE103A /* Frameworks */,
@@ -190,14 +155,14 @@
 			);
 			dependencies = (
 			);
-			name = "Navigation Bar Project";
+			name = "KaKao Clone";
 			packageProductDependencies = (
 				5522A81D29AF952600E6451B /* FirebaseAnalytics */,
 				5522A82029B06B0200E6451B /* FirebaseFirestore */,
 				5522A82229B06B3500E6451B /* FirebaseAuth */,
 			);
 			productName = "Navigation Bar Project";
-			productReference = 55D6686F299B7F4D00EE103A /* Navigation Bar Project.app */;
+			productReference = 55D6686F299B7F4D00EE103A /* KaKao Clone.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -215,7 +180,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 55D6686A299B7F4D00EE103A /* Build configuration list for PBXProject "Navigation Bar Project" */;
+			buildConfigurationList = 55D6686A299B7F4D00EE103A /* Build configuration list for PBXProject "KaKao Clone" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -231,7 +196,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				55D6686E299B7F4D00EE103A /* Navigation Bar Project */,
+				55D6686E299B7F4D00EE103A /* KaKao Clone */,
 			);
 		};
 /* End PBXProject section */
@@ -256,16 +221,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				55674BAB299E920E002AC5F6 /* TableViewCell.swift in Sources */,
-				55D66877299B7F4D00EE103A /* ViewController.swift in Sources */,
+				55D66877299B7F4D00EE103A /* MainViewController.swift in Sources */,
 				55D66873299B7F4D00EE103A /* AppDelegate.swift in Sources */,
 				55674BAF299E953A002AC5F6 /* DataManager.swift in Sources */,
 				5515455D29A7565C001FB8D3 /* CustomValue.swift in Sources */,
-				5522A82B29B0BD5100E6451B /* LoginManager.swift in Sources */,
 				5515455929A7321D001FB8D3 /* LoginViewController.swift in Sources */,
 				55674BA7299C9333002AC5F6 /* ChatViewController.swift in Sources */,
 				55D66875299B7F4D00EE103A /* SceneDelegate.swift in Sources */,
 				5522A82929B06DB700E6451B /* LoginView.swift in Sources */,
-				5515455B29A73904001FB8D3 /* UITabBarViewController.swift in Sources */,
+				5515455B29A73904001FB8D3 /* FirstTabBarViewController.swift in Sources */,
 				55674BAD299E94B8002AC5F6 /* ChatBox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,7 +381,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VJ2VF4KUF7;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Navigation Bar Project/Info.plist";
+				INFOPLIST_FILE = "KaKao Clone/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -429,7 +393,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "zundaeng.Navigation-Bar-Project";
+				PRODUCT_BUNDLE_IDENTIFIER = "zundaeng.KaKao-Clone";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -446,7 +410,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VJ2VF4KUF7;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Navigation Bar Project/Info.plist";
+				INFOPLIST_FILE = "KaKao Clone/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -458,7 +422,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "zundaeng.Navigation-Bar-Project";
+				PRODUCT_BUNDLE_IDENTIFIER = "zundaeng.KaKao-Clone";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -469,7 +433,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		55D6686A299B7F4D00EE103A /* Build configuration list for PBXProject "Navigation Bar Project" */ = {
+		55D6686A299B7F4D00EE103A /* Build configuration list for PBXProject "KaKao Clone" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				55D66881299B7F4F00EE103A /* Debug */,
@@ -478,7 +442,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		55D66883299B7F4F00EE103A /* Build configuration list for PBXNativeTarget "Navigation Bar Project" */ = {
+		55D66883299B7F4F00EE103A /* Build configuration list for PBXNativeTarget "KaKao Clone" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				55D66884299B7F4F00EE103A /* Debug */,
