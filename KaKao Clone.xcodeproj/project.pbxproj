@@ -19,6 +19,8 @@
 		55674BAB299E920E002AC5F6 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55674BAA299E920E002AC5F6 /* TableViewCell.swift */; };
 		55674BAD299E94B8002AC5F6 /* ChatBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55674BAC299E94B8002AC5F6 /* ChatBox.swift */; };
 		55674BAF299E953A002AC5F6 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55674BAE299E953A002AC5F6 /* DataManager.swift */; };
+		556CE49D29B234D90027C708 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CE49C29B234D90027C708 /* Constants.swift */; };
+		556CE49F29B338890027C708 /* 미사용코드.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CE49E29B338890027C708 /* 미사용코드.swift */; };
 		55D66873299B7F4D00EE103A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D66872299B7F4D00EE103A /* AppDelegate.swift */; };
 		55D66875299B7F4D00EE103A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D66874299B7F4D00EE103A /* SceneDelegate.swift */; };
 		55D66877299B7F4D00EE103A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D66876299B7F4D00EE103A /* MainViewController.swift */; };
@@ -37,6 +39,8 @@
 		55674BAA299E920E002AC5F6 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		55674BAC299E94B8002AC5F6 /* ChatBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBox.swift; sourceTree = "<group>"; };
 		55674BAE299E953A002AC5F6 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		556CE49C29B234D90027C708 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		556CE49E29B338890027C708 /* 미사용코드.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "미사용코드.swift"; sourceTree = "<group>"; };
 		55D6686F299B7F4D00EE103A /* KaKao Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KaKao Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55D66872299B7F4D00EE103A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55D66874299B7F4D00EE103A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,7 +77,7 @@
 			children = (
 				55674BB0299F1D39002AC5F6 /* Models */,
 				55674BB1299F1D58002AC5F6 /* Views */,
-				55674BB2299F1D60002AC5F6 /* ViewControllers */,
+				55674BB2299F1D60002AC5F6 /* Controllers */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -90,22 +94,45 @@
 		55674BB1299F1D58002AC5F6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5522A82829B06DB700E6451B /* LoginView.swift */,
 				55674BAA299E920E002AC5F6 /* TableViewCell.swift */,
 				55D66878299B7F4D00EE103A /* Main.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		55674BB2299F1D60002AC5F6 /* ViewControllers */ = {
+		55674BB2299F1D60002AC5F6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				55D66876299B7F4D00EE103A /* MainViewController.swift */,
-				55674BA6299C9333002AC5F6 /* ChatViewController.swift */,
 				5515455A29A73904001FB8D3 /* FirstTabBarViewController.swift */,
+				55674BA6299C9333002AC5F6 /* ChatViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		556CE49929B22FCE0027C708 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				556CE49A29B22FF00027C708 /* View */,
+				556CE49B29B22FF90027C708 /* Controller */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		556CE49A29B22FF00027C708 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5522A82829B06DB700E6451B /* LoginView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		556CE49B29B22FF90027C708 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
 				5515455829A7321D001FB8D3 /* LoginViewController.swift */,
 			);
-			path = ViewControllers;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		55D66866299B7F4D00EE103A = {
@@ -131,11 +158,14 @@
 				55D66872299B7F4D00EE103A /* AppDelegate.swift */,
 				5515455C29A7565C001FB8D3 /* CustomValue.swift */,
 				55D66874299B7F4D00EE103A /* SceneDelegate.swift */,
+				556CE49929B22FCE0027C708 /* Login */,
 				5522A82C29B0BD7100E6451B /* Main */,
 				55D6687B299B7F4F00EE103A /* Assets.xcassets */,
 				55D6687D299B7F4F00EE103A /* LaunchScreen.storyboard */,
 				55D66880299B7F4F00EE103A /* Info.plist */,
 				5522A81A29AF92E200E6451B /* GoogleService-Info.plist */,
+				556CE49C29B234D90027C708 /* Constants.swift */,
+				556CE49E29B338890027C708 /* 미사용코드.swift */,
 			);
 			path = "KaKao Clone";
 			sourceTree = "<group>";
@@ -231,6 +261,8 @@
 				5522A82929B06DB700E6451B /* LoginView.swift in Sources */,
 				5515455B29A73904001FB8D3 /* FirstTabBarViewController.swift in Sources */,
 				55674BAD299E94B8002AC5F6 /* ChatBox.swift in Sources */,
+				556CE49D29B234D90027C708 /* Constants.swift in Sources */,
+				556CE49F29B338890027C708 /* 미사용코드.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
