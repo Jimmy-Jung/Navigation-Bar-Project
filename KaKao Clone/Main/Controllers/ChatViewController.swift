@@ -22,18 +22,14 @@ final class ChatViewController: UIViewController {
     
     var chatBoxArray: [ChatBox] = []
     var chatDataManager = DataManager.shared
-    let dateFormatter = DateFormatter()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        loadMessage()
+    
         tableViewSetup()
         textViewSetup()
         setupData()
         keyboartSetup()
-        makeDateFormatter()
         hideKeyboard()
     }
     
@@ -54,39 +50,32 @@ final class ChatViewController: UIViewController {
                 }
             }
             chatTextView.text = ""
-        }
-    }
-    //서버에 저장되어있는 메세지 최초 호출
-    func loadMessage() {
-        db.collection(K.Fstore.collectionName).getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                //서버에 있는 문서 한개씩 반복호출
-                if let snapshotDocument = querySnapshot?.documents {
-                    for doc in snapshotDocument {
-                        let data = doc.data()
-                        
-                        if let sender = data[K.Fstore.sender] as? String,
-                           let message = data[K.Fstore.massage] as? String,
-                           let date = data[K.Fstore.date] as? TimeInterval
-                        {
-                            self.chatDataManager.updateData(sender: sender, message: message, date: date)
-                            let newMesaege = self.chatDataManager.getLastData()
-                            self.chatBoxArray.append(newMesaege)
-                        }
-                    }
-                    //문서 전부 호출하고 테이블뷰 다시 로드하기
-                    self.tableView.reloadData()
-                }
-            }
+            realTimeLoadMessage()
         }
     }
     
-    func makeDateFormatter() {
-        dateFormatter.locale = Locale(identifier: "Ko_KR")
-        dateFormatter.dateFormat = "a h:mm"
+    //실시간 채팅 기능
+    func realTimeLoadMessage() {
+        db.collection(K.Fstore.collectionName)
+            .order(by: K.Fstore.date, descending: true)
+            .limit(to: 1)
+            .addSnapshotListener { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    guard let snapshotDocument = querySnapshot?.documents.first else {return}
+                    let data = snapshotDocument.data()
+                    guard let sender = data[K.Fstore.sender] as? String,
+                          let message = data[K.Fstore.massage] as? String,
+                          let date = data[K.Fstore.date] as? TimeInterval else {return}
+                    self.chatDataManager.updateData(sender: sender, message: message, date: date)
+                    let newMesaege = self.chatDataManager.getLastData()
+                    self.chatBoxArray.append(newMesaege)
+                    self.tableView.reloadData()
+                }
+            }
     }
+    
     func keyboartSetup() {
         self.tabBarController?.tabBar.isHidden = true
         keyboardSetObserver()
@@ -119,11 +108,6 @@ final class ChatViewController: UIViewController {
                 action: #selector(ChatViewController.dismissKeyboard))
             view.addGestureRecognizer(tap)
         }
-    @objc func dismissKeyboard()
-        {
-            view.endEditing(true)
-        }
-    
     
     func keyboardSetObserver() {
         NotificationCenter.default.addObserver(
@@ -139,6 +123,10 @@ final class ChatViewController: UIViewController {
             object: nil)
     }
     
+    @objc func dismissKeyboard()
+        {
+            view.endEditing(true)
+        }
     
     @objc func keyboardWillShow(_ noti: Notification){
         let notiInfo = noti.userInfo!
